@@ -1,0 +1,76 @@
+div.floater {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  max-height: 10vh;
+}
+
+div.right {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  max-height: 10vh;
+  max-width: 10%;
+  text-align: right;
+}
+
+.center {
+  flex: 1;
+}
+
+body {
+  display: flex;
+  flex-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: -apple-system, sans-serif, system;
+  background-color: #14415B;
+  color: #FFF;
+}
+
+h1,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 15vh;
+  font-weight: 1000;
+}
+
+h3 {
+  font-size: 5vh;
+  font-weight: 400;
+}
+
+#infoLink {
+  text-decoration: none;
+  color:#FFF;
+
+}
+
+#infoLink[disabled] {
+  color: #BBB;
+  cursor: not-allowed;
+}
+
+@media (max-height:4in) {
+  div.floater {
+    display: none
+  }
+
+  h1 {
+    font-size: 20vw;
+  }
+
+  h3 {
+    font-size: 10vw;
+  }
+}
