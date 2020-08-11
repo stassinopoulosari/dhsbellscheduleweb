@@ -91,7 +91,10 @@
     scheduleKeys.forEach((scheduleKey) => {
       var schedule = schedules[scheduleKey],
         name = schedule.name,
-        keys = Object.keys(schedule).filter((key) => key != "name").sort(),
+        keys = Object.keys(schedule).filter((key) => key != "name").sort().filter((key) => {
+          if (schedules[key].hidden) return false;
+          return true;
+        }),
         contents = "";
       keys.forEach((key) => {
         var period = schedule[key],
