@@ -83,7 +83,10 @@
     }
     var schedules = bsData.schedules;
 
-    var scheduleKeys = Object.keys(schedules).sort(),
+    var scheduleKeys = Object.keys(schedules).sort().filter((key) => {
+        if (schedules[key].hidden) return false;
+        return true;
+      }),
       date = new Date(),
       newTable = "";
     // periodIndex = getPeriodIndex(date, schedule);
@@ -91,10 +94,7 @@
     scheduleKeys.forEach((scheduleKey) => {
       var schedule = schedules[scheduleKey],
         name = schedule.name,
-        keys = Object.keys(schedule).filter((key) => key != "name").sort().filter((key) => {
-          if (schedules[key].hidden) return false;
-          return true;
-        }),
+        keys = Object.keys(schedule).filter((key) => key != "name").sort(),
         contents = "";
       keys.forEach((key) => {
         var period = schedule[key],
