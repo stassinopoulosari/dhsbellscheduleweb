@@ -1,6 +1,11 @@
 (() => {
   var data = bellScheduleData,
     config = bellScheduleConfig,
+    sanitize = (str) => {
+      var el = document.createElement("div");
+      el.innerText = str;
+      return el.innerHTML
+    },
     getData = () => {
       return new Promise(function(resolve, reject) {
         data.getSymbols().then((symbolsData) => {
@@ -83,7 +88,7 @@
     setInterval(() => {
       var currTable = $scheduleTable.innerHTML,
        newTable = "",
-       date = new Date()
+       date = new Date(),
        periodIndex = getPeriodIndex(date, schedule);
       console.log(periodIndex);
       keys.forEach((key) => {
@@ -94,7 +99,7 @@
           className = resolveSymbols(period.name);
         newTable += $template.
         replace(/{{current}}/g, isCurrent ? "current" : "").
-        replace(/{{className}}/g, className).
+        replace(/{{className}}/g, sanitize(className)).
         replace(/{{startTime}}/g, startTime.padStart(8)).
         replace(/{{endTime}}/g, endTime.padStart(8));
       });

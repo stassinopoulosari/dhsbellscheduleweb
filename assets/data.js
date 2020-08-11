@@ -69,6 +69,19 @@
         });
       });
     },
+    getAllSchedules = () => {
+      return new Promise(function(resolve, reject) {
+
+        // var scheduleIdentifier = splitCalendar[day],
+        var schedulePathString = "schools/" +
+          config.schoolIdentifier +
+          "/schedules",
+          schedulePath = getPath(schedulePathString);
+        return getValue(schedulePath).catch(reject).then((data) => {
+          return resolve(data.val());
+        });
+      });
+    },
     getSymbols = () => {
       return new Promise(function(resolve, reject) {
         var symbolsPathString = "schools/" +
@@ -84,6 +97,7 @@
     dateComponents: dateComponents,
     getCalendar: getCalendar,
     getSchedule: getSchedule,
+    getAllSchedules: getAllSchedules,
     getSymbols: getSymbols,
     dateFromTimeString: dateFromTimeString,
     displayTime: displayTime

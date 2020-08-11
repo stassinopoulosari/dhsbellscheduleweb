@@ -2,12 +2,14 @@ body {
   padding: 0em;
   font-family: -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, system;
 }
-#scheduleTable {
-  padding:0;
+#scheduleTable, #schedulesTable {
+  padding-left:2.5vw;
+  padding-right:2.5vw;  
   margin:0;
 }
 h1 {
-  padding-left:0.5em;
+  padding-left:2.5vw;
+  padding-right:2.5vw;
   padding-top: 0.5em;
   font-size:2.5em;
   margin:0;
@@ -21,15 +23,35 @@ h1 a {
   text-decoration: none;
   color: #14415B
 }
-#scheduleTable li {
+#scheduleTable li, #schedulesTable li, .scheduleTable li {
   list-style: none;
   padding:1em;
   display:flex;
-  font-size:1.5em;
   align-items: center;
 }
-#scheduleTable li:nth-child(even) {
+#scheduleTable li,#schedulesTable>li {
+  font-size:1.5em;
+}
+.scheduleTable {
+  flex:1;
+  margin:0;
+  padding:0;
+  margin-bottom:2em;
+}
+#schedulesTable li.parent {
+  padding:0;
+  display:flex;
+}
+
+#scheduleTable li:nth-child(even), .scheduleTable li:nth-child(odd) {
   background-color: #E5E5E5;
+}
+.scheduleTable li.title {
+  padding:0.25em !important;
+  font-size:0.85em !important;
+  background-color: #14415B;
+  color: white;
+  text-align:left;
 }
 #scheduleTable li.current {
   font-weight: bold;
@@ -46,4 +68,21 @@ h1 a {
   padding-left:1em;
   padding-bottom:1em;
   width:50vw;
+}
+
+.skedHeader {
+  display:flex;
+  flex-direction: row;
+}
+.skedHeader div {
+  flex:1;
+}
+.allSkedsHeader {
+  text-align:right;
+}
+
+@media (max-width:5in) {
+  h1, #scheduleTable, #schedulesTable {
+    padding:0;
+  }
 }
