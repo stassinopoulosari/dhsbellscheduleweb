@@ -85,6 +85,7 @@
        newTable = "",
        date = new Date()
        periodIndex = getPeriodIndex(date, schedule);
+      console.log(periodIndex);
       keys.forEach((key) => {
         var period = schedule[key],
           isCurrent = periodIndex == key,

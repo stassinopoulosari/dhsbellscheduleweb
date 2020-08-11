@@ -9,10 +9,23 @@ div.floater {
 div.right {
   position: absolute;
   top: 5%;
-  right: 5%;
-  max-height: 10vh;
-  max-width: 10%;
+  right: 10%;
+  left:5%;
+  bottom:90%;
   text-align: right;
+}
+
+.bottom {
+  display: block;
+  position: absolute;
+  color: white;
+  text-align:right;
+  top: 90%;
+  bottom: 5%;
+  left: 5%;
+  right: 10%;
+  font-size: 110%;
+  text-decoration: none;
 }
 
 .center {
@@ -52,8 +65,9 @@ h3 {
 
 #infoLink {
   text-decoration: none;
-  color:#FFF;
-
+  color: #FFF;
+  display: block;
+  min-height: 10vh;
 }
 
 #infoLink[disabled] {
@@ -62,7 +76,7 @@ h3 {
 }
 
 @media (max-height:4in) {
-  div.floater {
+  div.floater, .bottom, .right {
     display: none
   }
 

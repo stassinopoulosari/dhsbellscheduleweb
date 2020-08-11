@@ -47,13 +47,9 @@
     getPeriod = (date, schedule) => {
     for (var periodIndex in schedule) {
       var period = schedule[periodIndex];
-      if (periodIndex == "name" ||
-        typeof(period) != "object" ||
-        !period.start ||
-        !period.end) continue;
+      if (periodIndex == "name") continue;
       var startDate = data.dateFromTimeString(date, period.start),
       endDate = data.dateFromTimeString(date, period.end);
-      console.log(startDate, date, endDate);
       if(startDate.getTime() <= date.getTime() && endDate.getTime() > date.getTime()) return period;
     }
     return null;
@@ -100,6 +96,7 @@
         [$startTimeView, $countdownView].forEach(($el) => $el.innerText = "");
         return;
       }
+      console.log(new Date());
       var period = getPeriod(new Date(), bsData.schedule);
       console.log(period);
       if(period == null) {
@@ -114,7 +111,6 @@
       $countdownView.innerText = Math.floor(secsLeft / 60) + ":" + (secsLeft % 60 + "").padStart(2, "0");
       $classNameView.innerText = resolveSymbols(period.name);
     }, 500);
-    console.log(data);
   }).catch((error) => {
     stopLoadingAnimation();
     $endTimeView.innerText = "Error";

@@ -28,7 +28,7 @@
     displayTime = (date) => {
       var hours = date.getHours();
       var minutes = date.getMinutes();
-      return (hours == 0 ? "12" : (hours % 12 == 0 ? "12" : hours % 12)) + ":" + (minutes + "").padStart(2, "0") + (hours < 12 ? " AM" : " PM");
+      return (hours % 12 == 0 ? 12 : hours % 12) + ":" + (minutes + "").padStart(2, "0") + (hours < 12 ? " AM" : " PM");
     },
     getCalendar = (date) => {
       return new Promise(function(resolve, reject) {
@@ -40,7 +40,7 @@
           "/" +
           components.paddedMonth,
           calendarPath = getPath(calendarPathString);
-          console.log(calendarPathString);
+        console.log(calendarPathString);
         return getValue(calendarPath).catch(reject).then((data) => {
           return resolve(data.val());
         });
@@ -60,6 +60,7 @@
           "/schedules/" +
           scheduleIdentifier,
           schedulePath = getPath(schedulePathString);
+        console.log(schedulePathString);
         if (scheduleIdentifier == "") {
           return resolve(null);
         }

@@ -40,3 +40,10 @@ h1 a {
 .time {
   font-family:"Andale Mono", monospace;
 }
+
+#feedbackLink {
+  display:block;
+  padding-left:1em;
+  padding-bottom:1em;
+  width:50vw;
+}
