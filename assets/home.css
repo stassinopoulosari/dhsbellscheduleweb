@@ -30,7 +30,7 @@ body {
   right: 0;
   bottom: 0;
   text-align: center;
-  font-family: -apple-system, sans-serif, system;
+  font-family: -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, system;
   background-color: #14415B;
   color: #FFF;
 }

@@ -1,0 +1,42 @@
+body {
+  padding: 0em;
+  font-family: -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif, system;
+}
+#scheduleTable {
+  padding:0;
+  margin:0;
+}
+h1 {
+  padding-left:0.5em;
+  padding-top: 0.5em;
+  font-size:2.5em;
+  margin:0;
+}
+h1 span {
+  background-color: #14415B;
+  color: white;
+}
+h1 a {
+  font-size:0.75em;
+  text-decoration: none;
+  color: #14415B
+}
+#scheduleTable li {
+  list-style: none;
+  padding:1em;
+  display:flex;
+  font-size:1.5em;
+  align-items: center;
+}
+#scheduleTable li:nth-child(even) {
+  background-color: #E5E5E5;
+}
+#scheduleTable li.current {
+  font-weight: bold;
+}
+.className {
+  flex:1;
+}
+.time {
+  font-family:"Andale Mono", monospace;
+}

@@ -6,63 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Schedule — The DHS Bell Schedule Web Edition</title>
-  <style>
-    body {
-      padding: 0em;
-      font-family: -apple-system, sans-serif, system;
-    }
-    #scheduleTable {
-      padding:0;
-      margin:0;
-    }
-    h1 {
-      padding-left:0.5em;
-      padding-top: 0.5em;
-      font-size:2.5em;
-      margin:0;
-    }
-    h1 span {
-      background-color: #14415B;
-      color: white;
-    }
-    h1 a {
-      font-size:0.75em;
-      text-decoration: none;
-      color: #14415B
-    }
-    #scheduleTable li {
-      list-style: none;
-      padding:1em;
-      display:flex;
-      font-size:1.5em;
-      align-items: center;
-    }
-    #scheduleTable li:nth-child(even) {
-      background-color: #E5E5E5;
-    }
-    #scheduleTable li.current {
-      font-weight: bold;
-    }
-    .className {
-      flex:1;
-    }
-    .time {
-      font-family:"Andale Mono", monospace;
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/schedule.css">
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+  <script src="../assets/config.js"></script>
 </head>
 
 <body>
-  <h1><span>Schedule</span> <a href="..">< Back</a></h1>
+  <h1><span>Schedule</span> <a href="..">
+      < Back</a>
+  </h1>
   <ul id="scheduleTable">
-    <li><div class="className">Loading...</div></li>
+    <li>
+      <div class="className">Loading...</div>
+    </li>
   </ul>
 </body>
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
-<script src="../assets/config.js"></script>
-<script src="../assets/data.min.js"></script>
-<script src="../assets/app-schedule.min.js"></script>
+<script>
+  var dyL=function(e,a,n){var t=document.createElement("script");t.src=e,t.onload=a,t.onreadystatechange=a,n.appendChild(t)};
+  var min = location.hostname.includes("localhost") ? "" : ".min";
+  dyL('../assets/data' + min + '.js',
+    () => dyL('../assets/app-schedule' + min + '.js', null, document.body),
+    document.body);
+</script>
 
 </html>
