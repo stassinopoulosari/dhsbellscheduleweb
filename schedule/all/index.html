@@ -7,6 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>All Schedules — The DHS Bell Schedule Web Edition</title>
   <link rel="stylesheet" href="../../assets/schedule.css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../assets/favicon/site.webmanifest">
+
+
   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
@@ -32,7 +40,10 @@
   <a id="feedbackLink" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSf3fZj5p1FPHOAn4Y0JcyNMpvn_X_vvq6rpJPjfuma1c8OpkQ/viewform">Send Feedback</a>
 </body>
 <script>
-  var dyL=function(e,a,n){var t=document.createElement("script");t.src=e,t.onload=a,t.onreadystatechange=a,n.appendChild(t)};
+  var dyL = function(e, a, n) {
+    var t = document.createElement("script");
+    t.src = e, t.onload = a, t.onreadystatechange = a, n.appendChild(t)
+  };
   var min = location.hostname.includes("localhost") ? "" : ".min";
   dyL('../../assets/data' + min + '.js',
     () => dyL('../../assets/app-allSchedules' + min + '.js', null, document.body),
