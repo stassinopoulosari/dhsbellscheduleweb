@@ -13,8 +13,8 @@
     projectId: "ubsa-fb",
     storageBucket: "ubsa-fb.appspot.com",
     messagingSenderId: "295845474213",
-    appId: "1:295845474213:web:21950cd5122bd97ea7824c",
-    measurementId: "G-PMQ5VDKHPS"
+    appId: "1:295845474213:web:7b008bb6a1f19580a7824c",
+    measurementId: "G-64RLY1YP5M"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
