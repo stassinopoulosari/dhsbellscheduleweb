@@ -1,42 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="assets/home.css" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="assets/favicon/site.webmanifest" />
+        <title>🔔 Bell Schedule Web</title>
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+        <script src="assets/config.js"></script>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/home.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <title>The DHS Bell Schedule Web Edition</title>
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
-  <script src="assets/config.js"></script>
-</head>
-
-<body>
-  <div class="floater nav">
-    <div class="center" id="classNameView"></div>
-  </div>
-  <div class="right">
-    <a id="infoLink" href="schedule">ⓘ</a>
-  </div>
-  <div class="middle">
-    <h3 id="startTimeView"></h3>
-    <h1 id="endTimeView">...</h1>
-    <h3 id="countdownView"></h3>
-  </div>
-    <a class="bottom" target="_blank" id="feedbackLink" href="https://docs.google.com/forms/d/e/1FAIpQLSf3fZj5p1FPHOAn4Y0JcyNMpvn_X_vvq6rpJPjfuma1c8OpkQ/viewform">💬</a>
-</body>
-<script>
-  var dyL=function(e,a,n){var t=document.createElement("script");t.src=e,t.onload=a,t.onreadystatechange=a,n.appendChild(t)};
-  var min = location.hostname.includes("localhost") ? "" : ".min";
-  dyL('assets/data' + min + '.js',
-    () => dyL('assets/app-home' + min + '.js', null, document.body),
-    document.body);
-</script>
-
+    <body>
+        <div class="floater nav">
+            <div class="center" id="classNameView"></div>
+        </div>
+        <div class="right">
+            <a id="infoLink" href="schedule">ⓘ</a>
+        </div>
+        <div class="middle">
+            <h3 id="startTimeView"></h3>
+            <h1 id="endTimeView">...</h1>
+            <h3 id="countdownView"></h3>
+        </div>
+        <a
+            class="bottom"
+            target="_blank"
+            id="feedbackLink"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf3fZj5p1FPHOAn4Y0JcyNMpvn_X_vvq6rpJPjfuma1c8OpkQ/viewform"
+            >💬</a
+        >
+    </body>
+    <script>
+        var dyL = function (e, a, n) {
+            var t = document.createElement("script");
+            (t.src = e),
+                (t.onload = a),
+                (t.onreadystatechange = a),
+                n.appendChild(t);
+        };
+        var min = "";
+        dyL(
+            "assets/data" + min + ".js",
+            () => dyL("assets/app-home" + min + ".js", null, document.body),
+            document.body,
+        );
+    </script>
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "Bell Schedule Web",
+  "name": "DHS Bell Schedule Web",
   "short_name": "Bell Schedule",
   "icons": [{
     "src": "/assets/favicon/android-chrome-192x192.png",
@@ -10,7 +10,7 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "theme_color": "#ffffff",
+  "theme_color": "#14415B",
   "background_color": "#14415B",
   "display": "standalone"
 }
