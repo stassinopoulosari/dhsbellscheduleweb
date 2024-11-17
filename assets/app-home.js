@@ -111,7 +111,7 @@ import * as data from "./data.js";
       stopLoadingAnimation();
       setInterval(() => {
         if (bsData.schedule == null) {
-          $endTimeView.innerText = "No Class";
+          $endTimeView.innerText = "No schedule for today";
           [$startTimeView, $countdownView].forEach(
             ($el) => ($el.innerText = ""),
           );
@@ -149,6 +149,6 @@ import * as data from "./data.js";
     .catch((error) => {
       stopLoadingAnimation();
       $endTimeView.innerText = "Error";
-      console.log(error);
+      console.error(error);
     });
 })();
