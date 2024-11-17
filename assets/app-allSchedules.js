@@ -1,6 +1,6 @@
+import * as data from "./data.js";
 (() => {
-  var data = bellScheduleData,
-    config = bellScheduleConfig,
+  var config = bellScheduleConfig,
     sanitize = (str) => {
       var el = document.createElement("div");
       el.innerText = str;

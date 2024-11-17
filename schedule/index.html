@@ -50,24 +50,5 @@
             >Send Feedback</a
         >
     </body>
-    <script>
-        var dyL = function (e, a, n) {
-            var t = document.createElement("script");
-            (t.src = e),
-                (t.onload = a),
-                (t.onreadystatechange = a),
-                n.appendChild(t);
-        };
-        var min = "";
-        dyL(
-            "../assets/data" + min + ".js",
-            () =>
-                dyL(
-                    "../assets/app-schedule" + min + ".js",
-                    null,
-                    document.body,
-                ),
-            document.body,
-        );
-    </script>
+    <script src="../assets/app-schedule.js" type="module"></script>
 </html>
