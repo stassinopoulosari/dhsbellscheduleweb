@@ -111,7 +111,7 @@ import * as data from "./data.js";
       stopLoadingAnimation();
       setInterval(() => {
         if (bsData.schedule == null) {
-          $endTimeView.innerText = "No schedule for today";
+          $endTimeView.innerText = "No schedule";
           [$startTimeView, $countdownView].forEach(
             ($el) => ($el.innerText = ""),
           );
@@ -121,7 +121,7 @@ import * as data from "./data.js";
         var period = getPeriod(new Date(), bsData.schedule);
         console.log(period);
         if (period == null) {
-          $endTimeView.innerText = "No Class";
+          $endTimeView.innerText = "No class";
           [$startTimeView, $countdownView].forEach(
             ($el) => ($el.innerText = ""),
           );
