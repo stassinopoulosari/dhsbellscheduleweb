@@ -26,6 +26,9 @@ div.right {
     right: 10%;
     font-size: 110%;
     text-decoration: none;
+    padding: 1em;
+    font-size: 2em;
+    margin: -1em;
 }
 
 .center {
@@ -69,6 +72,9 @@ h3 {
     color: #fff;
     display: block;
     min-height: 10vh;
+    font-size: 150%;
+    padding: 1em;
+    margin: -1em;
 }
 
 #infoLink[disabled] {
@@ -76,7 +82,7 @@ h3 {
     cursor: not-allowed;
 }
 
-@media (max-height: 4in) {
+/* @media (max-height: 4in) {
     div.floater,
     .bottom,
     .right {
@@ -90,4 +96,4 @@ h3 {
     h3 {
         font-size: 10vw;
     }
-}
+} */
